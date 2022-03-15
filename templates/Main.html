@@ -1,232 +1,155 @@
-{% extends 'Base.html' %} {% load static %} {% block content %}
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- accordion  -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-<!--  -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!-- Google Fonts -->
-    <link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"/>
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"
-  ></script>
-<link rel="stylesheet" href="/static/css/Main.css">
+{% extends 'base.html'  %}
+{% load static %} 
+{% block content %}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-<script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-  ></script>
-<script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-  ></script>
 
-<body>
+<section id="home" class="slider" data-stellar-background-ratio="0.5">
+    <div class="container">
+         <div class="row">
 
-<br />
-<div class="container-fluid align-items-center" style="margin-left: auto;">
-  <div
-    class="row d-flex"
-    style="width: inherit; margin-left: inherit; margin-right: inherit"
-  >
-    <div class="row d-flex">
-      <div>
-        <div class="card" style="background-color: #c6e7d3">
-          <div class="card-body d-flex">
-            <div class="container-fluid" style="margin-right: auto;">
-              <img
-                src="/static/images/DoctorT.png"
-                class="img-thumbnail"
-                alt="..."
-                style="height: 300px; background-color: #c6e7d3"
-              />
-            </div>
-            <!--  -->
-            <div>
-              <h4 class="card-title">Book Your Appointment Now!</h4>
-              <p class="card-text">
-                We Have Best Doctors that will sure you best treatment.
-              </p>
-              <a
-                href="Appointment/"
-                class="btn btn-primary"
-                style="color: #c6e7d3; box-shadow: 1cm"
-                >Book Now</a
-              >
-            </div>
-          </div>
+                   <div class="owl-carousel owl-theme">
+                        <div class="item item-first">
+                             <div class="caption">
+                                  <div class="col-md-offset-1 col-md-10">
+                                       <h3>Let's make your life happier</h3>
+                                       <h1>Healthy Living</h1>
+                                       <a href="#team" class="section-btn btn btn-default smoothScroll">Meet Our Doctors</a>
+                                  </div>
+                             </div>
+                        </div>
+
+                        <div class="item item-second">
+                             <div class="caption">
+                                  <div class="col-md-offset-1 col-md-10">
+                                       <h3>The Power to Heal</h3>
+                                       <h1>New Lifestyle</h1>
+                                       <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">More About Us</a>
+                                  </div>
+                             </div>
+                        </div>
+
+                        <div class="item item-third">
+                             <div class="caption">
+                                  <div class="col-md-offset-1 col-md-10">
+                                       <h3>Keeping you to a better life</h3>
+                                       <h1>Your Health Benefits</h1>
+                                       <a href="#news" class="section-btn btn btn-default btn-blue smoothScroll">Read Stories</a>
+                                  </div>
+                             </div>
+                        </div>
+                   </div>
+
+         </div>
+    </div>
+</section>
+
+     <!-- ABOUT -->
+     <section id="about">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-6 col-sm-6">
+                       <div class="about-info">
+                            <h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to the Dev Clinic</h2>
+                            <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                 <p>My Aim is to provide World Class Health services to everyone in the World.</p>
+                                 <p>Having good health is everyone wish.</p>
+                            </div>
+                            <figure class="profile wow fadeInUp" data-wow-delay="1s">
+                                 <img src="/static/images/abputdvks.jpg" class="img-responsive" alt="">
+                                 <figcaption>
+                                      <h3>Dr. Channo Kamli</h3>
+                                      <p>General Principal</p>
+                                 </figcaption>
+                            </figure>
+                       </div>
+                  </div>
+                  
+             </div>
         </div>
-      </div>
+   </section>
+<!-- Team -->
+   <section id="team" data-stellar-background-ratio="1">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-6 col-sm-6">
+                   <div class="about-info">
+                        <h2 class="wow fadeInUp" data-wow-delay="0.1s">Our Doctors</h2>
+                   </div>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="col-md-4 col-sm-6">
+                   <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="/static/images/team-image1.jpg" class="img-responsive" alt="">
+
+                             <div class="team-info">
+                                  <h3>Marus Andrews</h3>
+                                  <p>General Principal</p>
+                                  <div class="team-contact-info">
+                                       <p><i class="fa fa-phone"></i> 010-020-0120</p>
+                                       <p><i class="fa fa-envelope-o"></i> <a href="#">general@company.com</a></p>
+                                  </div>
+                                  <ul class="social-icon">
+                                       <li><a href="#" class="fa fa-linkedin-square"></a></li>
+                                       <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                  </ul>
+                             </div>
+
+                   </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6">
+                   <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="/static/images/team-image2.jpg" class="img-responsive" alt="">
+
+                             <div class="team-info">
+                                  <h3>Claire Brownie</h3>
+                                  <p>Pregnancy</p>
+                                  <div class="team-contact-info">
+                                       <p><i class="fa fa-phone"></i> 91-8351234567</p>
+                                       <p><i class="fa fa-envelope-o"></i> <a href="#">MD@DevClinic.com</a></p>
+                                  </div>
+                                  <ul class="social-icon">
+                                       <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                       <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                       <li><a href="#" class="fa fa-flickr"></a></li>
+                                  </ul>
+                             </div>
+
+                   </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6">
+                   <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="/static/images/team-image3.jpg" class="img-responsive" alt="">
+
+                             <div class="team-info">
+                                  <h3>Neil Melendez</h3>
+                                  <p>Cardiology</p>
+                                  <div class="team-contact-info">
+                                       <p><i class="fa fa-phone"></i> 91-8351234567</p>
+                                       <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
+                                  </div>
+                                  <ul class="social-icon">
+                                       <li><a href="#" class="fa fa-twitter"></a></li>
+                                       <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                  </ul>
+                             </div>
+
+                   </div>
+              </div>
+              
+         </div>
     </div>
-  </div>
-<br>
-
-<div class="container-fluid " style="margin-left: auto;">
-<div class="row align-items-center">
-<div class="col-md-6" style="border-radius: 25px;">
-<!-- Carousel -->
-<div id="demo" class="carousel slide  carousel-fade" data-bs-ride="carousel" style="border-radius: 5px;">
-
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/static/images/Shawn Murphy.png" alt="Los Angeles" class="d-block w-100">
-    </div>
-    <div class="carousel-item">
-      <img src="/static/images/The-Good-Doctor-Wallpapers.jpg" alt="Chicago" class="d-block w-100">
-    </div>  
-    <div class="carousel-item">
-      <img src="/static/images/doctor-strange-doktor-strendzh-vrach-na-operatsii-neirokhiru.jpg" alt="New York" class="d-block w-100">
-    </div>
-  </div>
-
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-</div>
-
-<!-- Card Stylish -->
-<div class="col-md-6 justify-content-end">
-    <div class="service-block-two col-lg-6 col-md-8 col-sm-14">
-        <div class="inner-box">
-            <div class="shape-one"></div>
-            <div class="shape-two"></div>
-            <div class="icon-box"> <span class="icon flaticon-coding-1"></span> </div>
-            <h3><a href="" class="text-decoration-none">The Future of Healthcare.</a></h3>
-            <div class="text">World class healthcare where you live.</div>
-        </div>
-    </div>
-    <div class="service-block-two col-lg-6 col-md-8 col-sm-14">
-      <div class="inner-box" style="width: fit-content;" >
-          <div class="shape-one"></div>
-          <div class="shape-two"></div>
-          <div class="icon-box"> <span class="icon flaticon-coding-1"></span> </div>
-          <h3><a href="" class="text-decoration-none">The Future of Healthcare.</a></h3>
-          <div class="text">World class healthcare where you live.</div>
-      </div>
-  </div>
-  </div> 
-  
+</section>
+<!-- Team end -->
 
 
 
 
-    
 
-</div>
-</div>
-</div>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<!-- Accordion -->
-<div class="container-fluid bg-gray" id="accordion-style-1">
-	<div class="container">
-		<section>
-			<div class="row">
-				<div class="col-12">
-					<h1 class="text-green mb-4 text-center">Frequently Asked Questions</h1>
-				</div>
-				<div class="col-10 mx-auto">
-					<div class="accordion" id="accordionExample">
-						<div class="card">
-							<div class="card-header" id="headingOne">
-								<h5 class="mb-0">
-							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							  <i class="bi bi-hospital"></i><i class="fa fa-angle-double-right mr-3"></i>How To book Appointment.
-							</button>
-						  </h5>
-							</div>
-
-							<div id="collapseOne" class="collapse show fade" aria-labelledby="headingOne" data-parent="#accordionExample">
-								<div class="card-body">
-                  You can Book appointment online on our website.
-                </div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" id="headingTwo">
-								<h5 class="mb-0">
-							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							 <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right mr-3"></i>There are many more.
-							</button>
-						  </h5>
-							</div>
-							<div id="collapseTwo" class="collapse fade" aria-labelledby="headingTwo" data-parent="#accordionExample">
-								<div class="card-body">
-                  Our Mobile App is coming soon.
-                </div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" id="headingThree">
-								<h5 class="mb-0">
-							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							  <i class="fa fa-expeditedssl main"></i><i class="fa fa-angle-double-right mr-3"></i>Any risk.
-							</button>
-						  </h5>
-							</div>
-							<div id="collapseThree" class="collapse fade" aria-labelledby="headingThree" data-parent="#accordionExample">
-								<div class="card-body">
-                  We are Fully Verified.
-                </div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" id="headingFour">
-								<h5 class="mb-0">
-							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-							  <i class="fa fa-envelope main"></i><i class="fa fa-angle-double-right mr-3"></i>How to contact us.
-							</button>
-						  </h5>
-							</div>
-							<div id="collapseFour" class="collapse fade" aria-labelledby="headingFour" data-parent="#accordionExample">
-								<div class="card-body">
-                  bus kar bc sbh dekh lega aaj.
-                </div>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</div>
-		</section>
-	</div>
-</div>
-<!-- .// Accordion -->
-
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-crossorigin="anonymous"
-></script>
-  
-</body>
-  {%endblock %}
+{%endblock %}
 
