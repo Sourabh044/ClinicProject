@@ -1,8 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-from operator import truediv
 from django.utils import timezone
 from django.db import models
 import uuid
