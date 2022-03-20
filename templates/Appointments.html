@@ -1,0 +1,30 @@
+{% extends 'UI.html' %}
+{%  load static %}
+{% block content %}
+    <table class="table">
+      <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Description</th>
+            <th scope="col">Approved Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            {% for Appointment in Appointments %}
+            <th><a href="/Appointment/{{ Appointment.id_number }}">{{ Appointment.name}}</a></th>
+                <!-- <th>{{ Appointment.id_number}}</th>-->
+                <th>{{ Appointment.phone}}</th>
+                <th>{{ Appointment.description}}</th>
+                <th>{{ Appointment.approved}}</th>
+                {% if user.is_staff %}
+                <th><a href="/Delete-Appointment/{{ Appointment.id_number }}">Delete</a></th>
+                {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endblock content %}

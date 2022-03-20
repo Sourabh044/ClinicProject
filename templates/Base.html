@@ -92,7 +92,11 @@
             <li><a href="/" class="smoothScroll">Home</a></li>
             <li><a href="#about" class="smoothScroll">About Us</a></li>
             <li><a href="#team" class="smoothScroll">Doctors</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="/Dashboard/" class="smoothScroll">Dashboard</a></li>
+            {% else %}
             <li><a href="#news" class="smoothScroll">News</a></li>
+            {% endif %}
             <li><a href="#google-map" class="smoothScroll">Contact</a></li>
             <li class="appointment-btn">
               {% if user.is_authenticated %}

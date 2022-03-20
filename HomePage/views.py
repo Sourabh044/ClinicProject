@@ -11,6 +11,11 @@ from django.contrib import messages
 
 def HomePage(request):
         return render(request, 'Main.html')
+        
+
+def Dashboard(request):
+        return render(request, 'UI.html')
+
 
 
 # Reading a particular Appointment
@@ -44,7 +49,7 @@ def addpatient(request):
             obj.user = User.objects.get(pk=request.user.id) # Add an author field which will contain current user's id
             obj.save() # Save the final "real form" to the DB
             form.save()
-            return redirect('DevClinic')
+            return redirect('Dev Clinic')
         
     context = {'form': form }
     return render(request, 'Add-Patient.html', context)
@@ -57,7 +62,7 @@ def patients(request):
 
 # Updating the Patient Details
 def updatepatient(request, pk):
-    patient = Patient.objects.get(id_number=pk) #That id into field is bcos i was calling it id, but real name of
+    patient = Patient.objects.get(id=pk) #That id into field is bcos i was calling it id, but real name of
     # the PK was id_number
     form = PatientForm(instance=patient) #Here we passed the instance=patient so that it show the Pre-filled data
     

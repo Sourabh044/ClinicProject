@@ -9,9 +9,9 @@ from . models import Appointment, HealthHistory, Prescription
 class PatientAdmin(admin.ModelAdmin):
     list_display = ("name", "gender", "phone", "email", "date_recorded")
 
-@admin.register(Prescription)
-class PrescriptionAdmin(admin.ModelAdmin):
-    list_display = ("patient", "prescribed_on", "prescription_notes")
+# @admin.register(Prescription)
+# class PrescriptionAdmin(admin.ModelAdmin):
+#     list_display = ("patient", "prescribed_on", "prescription_notes")
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
@@ -33,5 +33,5 @@ class PatientFeedbackAdmin(admin.ModelAdmin):
 class HealthHistoryAdmin(admin.ModelAdmin):
     list_display = ("patient", "history")
 
-admin.site.site_title = "CLINIC MANAGEMENT SYSTEM"
-admin.site.site_header = "CLINIC MANAGEMENT SYSTEM"
+admin.site.site_title = "Dev Clinic Admin"
+admin.site.site_header = "Dev Clinic Admin"
