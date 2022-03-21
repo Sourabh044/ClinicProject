@@ -1,5 +1,8 @@
 from django import forms
 from .models import Patient, Appointment
+widgets = {
+      'bdate' : forms.SelectDateWidget(),         
+      }
 
 class PatientForm(forms.ModelForm):
     class Meta:
@@ -11,3 +14,4 @@ class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
         fields = ('__all__')
+        exclude = ['approved', 'name' ]

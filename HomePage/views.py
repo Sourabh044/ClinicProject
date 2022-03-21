@@ -1,7 +1,8 @@
+from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Appointment, Patient
-from .forms import PatientForm
+from .forms import PatientForm , AppointmentForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -10,7 +11,9 @@ from django.contrib import messages
     # return HttpResponse('this is homepage.')
 
 def HomePage(request):
-        return render(request, 'Main.html')
+        form = AppointmentForm()
+        context = {'form': form }
+        return render(request, 'Main.html', context)
         
 
 def Dashboard(request):
@@ -34,6 +37,22 @@ def appointments(request):
     return render (request, 'Appointments.html', context)
     # return HttpResponse('This is projects page.')
 
+def addappointment(request):
+    form = AppointmentForm() #passed the appointment Form.
+    # So now to fix the name issue we will use the trick from the Patient
+      
+    if request.method == 'POST':
+        form = AppointmentForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False) # Return an object without saving to the DB
+            obj.name = str(obj.patient) 
+            obj.save() 
+            form.save()
+            return redirect('/Appointments/')
+    context = {'form': form }
+    return render(request, 'Add-Appointment.html', context)
+
+
 
 # CRUD EXAMPLE HERE
 # Creating the Patient
@@ -49,8 +68,8 @@ def addpatient(request):
             obj.user = User.objects.get(pk=request.user.id) # Add an author field which will contain current user's id
             obj.save() # Save the final "real form" to the DB
             form.save()
-            return redirect('Dev Clinic')
-        
+            return redirect('Patients')
+
     context = {'form': form }
     return render(request, 'Add-Patient.html', context)
 
@@ -70,7 +89,7 @@ def updatepatient(request, pk):
         form = PatientForm(request.POST, instance=patient)
         if form.is_valid():
             form.save()
-            return redirect('DevClinic')
+            return redirect('Patients')
 
     context = {'form': form }
     return render(request, 'Update-Patient.html', context)
@@ -108,6 +127,8 @@ def signup(request):
         password = request.POST['password']
         newuser = User.objects.create_user(username = username , password = password, email=email,first_name= first_name, last_name= last_name) # 
         newuser.save()
+        messages.success(request, 'Profile Created. Login Please.')
+
         return redirect('/')
     else:
         # return HttpResponse('Error')
@@ -115,14 +136,32 @@ def signup(request):
 
 # Creating a new view for the Login
 def Login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['psw']
-        user = authenticate(username = username, password = password)
-        if user is not None:
-            login(request, user)
-            return redirect('/')
-        else:
-            messages.error(request,'username or password not correct. Please login Again')
-            return render(request, 'Main.html')
-            # return HttpResponse("Invalid Username or password")
+    if 'Login' in request.POST:
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['psw']
+            user = authenticate(username = username, password = password)
+            if user is not None:
+                login(request, user)
+                return redirect('/')
+            else:
+                messages.error(request,'username or password not correct. Please login Again')
+                return render(request, 'Main.html')
+                # return HttpResponse("Invalid Username or password")
+    
+    # if 'Appointment' in request.POST:
+    #     form = AppointmentForm() #passed the appointment Form.
+    # # So now to fix the name issue we will use the trick from the Patient
+      
+    #     if request.method == 'POST':
+    #         form = AppointmentForm(request.POST)
+    #         if form.is_valid():
+    #             obj = form.save(commit=False) # Return an object without saving to the DB
+    #             obj.name = str(obj.patient) 
+    #             obj.save()
+    #             form.save()
+    #             return redirect('Appointments')
+    #         else:
+    #             return HttpResponse('Not added')
+    #     context = {'form': form }
+    #     return render(request, 'Appointments.html', context)

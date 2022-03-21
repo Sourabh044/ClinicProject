@@ -31,8 +31,9 @@ class Patient(models.Model):
 class Appointment(models.Model):
 
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, null=True)
     id_number = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True , editable=False)
-    description = models.TextField(null=False,blank=False)
+    description = models.TextField(null=True,blank=True)
     date_requested = models.DateTimeField(default=timezone.now)
     approved = models.BooleanField(default=False)
     Dr_Name = models.CharField(max_length=200, choices=Dr_List , default=" ", blank=False)

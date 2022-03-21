@@ -1,6 +1,8 @@
-{% extends 'UI.html' %}
+{% extends 'Ui_base.html' %}
 {%  load static %}
 {% block content %}
+<h4>Appointments</h4>
+<a href="/Add-Appointment/">Add Appointment</a>
     <table class="table">
       <thead>
           <tr>
@@ -21,7 +23,7 @@
                 <th>{{ Appointment.description}}</th>
                 <th>{{ Appointment.approved}}</th>
                 {% if user.is_staff %}
-                <th><a href="/Delete-Appointment/{{ Appointment.id_number }}">Delete</a></th>
+                <th><a href="/Delete-Appointment/{{ Appointment.id_number }}">Cancel</a></th>
                 {% endif %}
           </tr>
           {% endfor %}

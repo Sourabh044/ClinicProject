@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{Appointment.name}}</title>
-</head>
-<body>
+{% extends 'Ui_base.html' %}
+{%  load static %}
+{% block content %}
     <h1>{{Appointment.name}}</h1>
 <hr>
     <h5>Prescription</h5>
@@ -21,8 +15,4 @@
     <a href="{%url 'Appointments' %}">Go Back  </a>
     <br>
     <a href="/Delete-Appointment/{{Appointment.id_number}}/">Delete</a>
-    {% block content %}
-
-    {% endblock content %}
-</body>
-</html>
+{% endblock content %}
