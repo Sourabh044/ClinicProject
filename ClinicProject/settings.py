@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static", # For running server on the pc/ development
-    # '/var/www/static/', # for running on the deployement server
+     '/var/www/static/', # for running on the deployement server
 ]
 
 # Default primary key field type

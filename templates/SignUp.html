@@ -14,14 +14,14 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
 
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/static/css/animate.css" />
-    <link rel="stylesheet" href="/static/css/owl.carousel.css" />
-    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}" />
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="/static/css/tooplate-style.css" />
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -122,7 +122,7 @@
          <div class="row">
 
               <div class="col-md-6 col-sm-6">
-                   <img src="images/appointment-image.jpg" class="img-responsive" alt="">
+                   <img src="'{% static images/appointment-image.jpg' %}" class="img-responsive" alt="">
               </div>
 
               <div class="col-md-6 col-sm-6">
@@ -228,7 +228,7 @@
                                  <p>Having good health is everyone wish.</p>
                             </div>
                             <figure class="profile wow fadeInUp" data-wow-delay="1s">
-                                 <img src="/static/images/abputdvks.jpg" class="img-responsive" alt="">
+                                 <img src="{% static 'images/abputdvks.jpg' %}" class="img-responsive" alt="">
                                  <figcaption>
                                       <h3>Dr. Channo Kamli</h3>
                                       <p>General Principal</p>
@@ -256,7 +256,7 @@
 
               <div class="col-md-4 col-sm-6">
                    <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                        <img src="/static/images/team-image1.jpg" class="img-responsive" alt="">
+                        <img src="{% static 'images/team-image1.jpg'%}" class="img-responsive" alt="">
 
                              <div class="team-info">
                                   <h3>Marus Andrews</h3>
@@ -276,7 +276,7 @@
 
               <div class="col-md-4 col-sm-6">
                    <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <img src="/static/images/team-image2.jpg" class="img-responsive" alt="">
+                        <img src="{% static 'images/team-image2.jpg'%}" class="img-responsive" alt="">
 
                              <div class="team-info">
                                   <h3>Claire Brownie</h3>
@@ -297,7 +297,7 @@
 
               <div class="col-md-4 col-sm-6">
                    <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-                        <img src="/static/images/team-image3.jpg" class="img-responsive" alt="">
+                        <img src="'{% static images/team-image3.jpg' %}" class="img-responsive" alt="">
 
                              <div class="team-info">
                                   <h3>Neil Melendez</h3>
@@ -351,7 +351,7 @@
                   <div class="stories-image">
                     <a href="#"
                       ><img
-                        src="/static/images/news-image.jpg"
+                        src="{% static 'images/news-image.jpg' %}"
                         class="img-responsive"
                         alt=""
                     /></a>
@@ -366,7 +366,7 @@
                   <div class="stories-image">
                     <a href="#"
                       ><img
-                        src="/static/images/news-image.jpg"
+                        src="{% static 'images/news-image.jpg' %}"
                         class="img-responsive"
                         alt=""
                     /></a>
@@ -437,14 +437,14 @@
       </footer>
   
       <!-- SCRIPTS -->
-      <script src="/static/js/jquery.js"></script>
-      <script src="/static/js/bootstrap.min.js"></script>
-      <script src="/static/js/jquery.sticky.js"></script>
-      <script src="/static/js/jquery.stellar.min.js"></script>
-      <script src="/static/js/wow.min.js"></script>
-      <script src="/static/js/smoothscroll.js"></script>
-      <script src="/static/js/owl.carousel.min.js"></script>
-      <script src="/static/js/custom.js"></script>
+      <script src="{% static 'js/jquery.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'js/jquery.sticky.js' %}"></script>
+      <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+      <script src="{% static 'js/wow.min.js' %}"></script>
+      <script src="{% static 'js/smoothscroll.js' %}"></script>
+      <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'js/custom.js' %}"></script>
     </body>
   </html>
   

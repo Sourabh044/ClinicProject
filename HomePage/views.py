@@ -1,4 +1,3 @@
-from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Appointment, Patient
@@ -11,9 +10,9 @@ from django.contrib import messages
     # return HttpResponse('this is homepage.')
 
 def HomePage(request):
-        form = AppointmentForm()
-        context = {'form': form }
-        return render(request, 'Main.html', context)
+        # form = AppointmentForm()
+        # context = {'form': form }
+        return render(request, 'Main.html')
         
 
 def Dashboard(request):
@@ -39,17 +38,24 @@ def appointments(request):
 
 def addappointment(request):
     form = AppointmentForm() #passed the appointment Form.
-    # So now to fix the name issue we will use the trick from the Patient
-      
+    # patients =  Patient.objects.filter(user=request.user)
+    # print(patients)
     if request.method == 'POST':
         form = AppointmentForm(request.POST)
+        userobj = request.user
+        patients =  Patient.objects.get(user=request.user)
+        print(patients)
         if form.is_valid():
             obj = form.save(commit=False) # Return an object without saving to the DB
             obj.name = str(obj.patient) 
             obj.save() 
             form.save()
             return redirect('/Appointments/')
-    context = {'form': form }
+        else:
+            form = AppointmentForm()
+            # patients =  Patient.objects.filter(user=request.user)
+            # print(patients)
+    context = {'form': form ,}
     return render(request, 'Add-Appointment.html', context)
 
 
