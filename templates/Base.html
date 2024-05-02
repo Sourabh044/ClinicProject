@@ -104,7 +104,22 @@
                 <a href="#appointment">Make Appointment</a>
               </li>
               <li class="appointment-btn">
-                <a href="{% url 'logout' %}">Log Out</a>
+                <form method="post" class="d-none" id="logout-form" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                </form>
+                <a href="#" id="logout-btn" onclick="return handleLogout()">Log Out</a>
+                <script>
+                  console.log('here');
+                  const lform = document.getElementById('logout-form');
+                  const lbtn = document.getElementById('logout-btn');
+                  lbtn.addEventListener('click', () => {
+                    logout();
+                  })
+                  function logout() {
+                    console.log('here');
+                    lform.submit();
+                  }
+                </script>
               </li>
               {% else %}
               <li class="appointment-btn">

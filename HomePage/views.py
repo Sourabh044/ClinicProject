@@ -37,11 +37,12 @@ def appointments(request):
     # return HttpResponse('This is projects page.')
 
 def addappointment(request):
-    form = AppointmentForm() #passed the appointment Form.
-    # patients =  Patient.objects.filter(user=request.user)
+    form = AppointmentForm(user=request.user)  # passed the appointment Form.
+    patients = Patient.objects.filter(user=request.user)
+    print(form.fields)
     # print(patients)
     if request.method == 'POST':
-        form = AppointmentForm(request.POST)
+        form = AppointmentForm(request.POST, user=request.user)
         userobj = request.user
         patients =  Patient.objects.get(user=request.user)
         print(patients)
@@ -52,7 +53,7 @@ def addappointment(request):
             form.save()
             return redirect('/Appointments/')
         else:
-            form = AppointmentForm()
+            form = AppointmentForm(user=request.user)
             # patients =  Patient.objects.filter(user=request.user)
             # print(patients)
     context = {'form': form ,}
@@ -154,7 +155,11 @@ def Login(request):
                 messages.error(request,'username or password not correct. Please login Again')
                 return render(request, 'Main.html')
                 # return HttpResponse("Invalid Username or password")
-    
+
+
+def logout(request):
+    logout(request)
+    return redirect('Dev Clinic')
     # if 'Appointment' in request.POST:
     #     form = AppointmentForm() #passed the appointment Form.
     # # So now to fix the name issue we will use the trick from the Patient

@@ -15,5 +15,6 @@ urlpatterns = [
     path('Update-Patient/<str:pk>', views.updatepatient, name="Update Patient"),
     path('SignUp/', views.signup, name="Sign Up"),
     path('Login/', views.Login, name="Sign Up"),
+    path("logout/", views.LogoutView.as_view(), name="logout"),
     path('Dashboard/', views.Dashboard, name="Dashboard"),
 ]
